@@ -10,6 +10,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="bg-gray-900 py-10">
+                        <div class="px-6">
+                            <x-link-button href="{{ route('products.create')}}" class="ml-4">{{ __('Create') }}</x-link-button>
+                        </div>
                         <table class="mt-6 w-full whitespace-nowrap text-left">
                             <colgroup>
                                 <col class="w-full sm:w-4/12">
@@ -50,9 +53,9 @@
                                     </td>
                                     <td class="py-4 pl-0 pr-4 text-right text-sm/6 text-gray-400 sm:pr-6 lg:pr-8">
                                         <div class="grid grid-cols-2 gap-2">
-                                            <a href="{{ route('products.edit', 1) }}"
+                                            <a href="{{ route('products.edit', $product->id) }}"
                                                 class="text-blue-500 hover:text-blue-600">Edit</a>
-                                            <form action="{{ route('products.destroy', 1) }}" method="POST">
+                                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"

@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'name'=>$this->faker->productName,
             'price'=>$this->faker->randomFloat(4, 10, 1000),
             'description'=>$this->faker->text,
-            'image'=>'https://picsum.photos/seed/picsum/200/300'
+            'image'=>'https://picsum.photos/seed/'.$this->faker->text(12).'/200/300',
     
         ];
     }
